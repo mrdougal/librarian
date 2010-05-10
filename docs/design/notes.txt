@@ -1,0 +1,86 @@
+Mon May 10 12:29:03 EST 2010
+
+- storing digital assets (pdf, richtext, pages*, psd, doc, png, etc, mostly images)
+ - pages - apple's document suite
+- extract as much metadata as can
+  - image magick uses adobe?, 
+  - exiftool for images
+- many schemas for each metadata of the many files
+- images have colorspace, docs no colorspace
+- no thumbnails for some types of docs (eg. colorspace)
+- design company uses apple's iwork suite (don't need office - use our stuff)
+- pages is a zip file
+- quicklook makes automatic preview
+- ruby tools for using zip archive
+- iwork (office)
+  - pages   (word)
+    file.pages (zipfile)
+     - QuickLook directory (instant previews of using spacebar) 
+       - Preview.pdf
+       - Thumbnail.jpg
+  - numbers (excel)
+  - keynote (powerpoint)
+
+- paperclip
+  - can write your own pre-processor
+    - create rules to extract QuickLook stuff
+  - do in background (eg. ocr)
+
+- apache solr
+  - full text search engine
+  - plugin for rails
+
+
+Mon May 10 14:22:28 EST 2010
+- imagescience
+  - http://seattlerb.rubyforge.org/ImageScience.html
+  - "clean happy ruby library"
+  - uses freeimage
+    - http://freeimage.sourceforge.net/features.html
+    -> supported formats
+       BMP files [reading, writing]
+       Dr. Halo CUT files [reading] *
+       DDS files [reading]
+       EXR files [reading, writing]
+       Raw Fax G3 files [reading]
+       GIF files [reading, writing]
+       HDR files [reading, writing]
+       ICO files [reading, writing]
+       IFF files [reading]
+       JBIG [reading, writing] **
+       JNG files [reading]
+       JPEG/JIF files [reading, writing]
+       JPEG-2000 File Format [reading, writing]
+       JPEG-2000 codestream [reading, writing]
+       KOALA files [reading]
+       Kodak PhotoCD files [reading]
+       MNG files [reading]
+       PCX files [reading]
+       PBM/PGM/PPM files [reading, writing]
+       PFM files [reading, writing]
+       PNG files [reading, writing]
+       Macintosh PICT files [reading]
+       Photoshop PSD files [reading]
+       RAW camera files [reading]
+       Sun RAS files [reading]
+       SGI files [reading]
+       TARGA files [reading, writing]
+       TIFF files [reading, writing]
+       WBMP files [reading, writing]
+       XBM files [reading]
+       XPM files [reading, writing]
+
+- RMagick
+  - http://rmagick.rubyforge.org/
+  - RMagick is an interface between the Ruby programming language and the ImageMagick® and GraphicsMagick image processing libraries.
+
+
+- gems ready for rails 3
+  - http://www.railsplugins.org/plugins
+    - Paperclip
+    - 
+
+
+Mon May 10 15:32:24 EST 2010
+ - breakdown of file formats ???
+  

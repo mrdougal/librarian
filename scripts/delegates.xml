@@ -1,0 +1,1 @@
+<delegate decode="pages" command='/usr/local/bin/convert_iwork "%i" "%o"'/>
