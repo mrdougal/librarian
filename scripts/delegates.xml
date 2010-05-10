@@ -1,1 +1,1 @@
-<delegate decode="pages" command='/usr/local/bin/convert_iwork "%i" "%o"'/>
+<delegate decode="pages" command='unzip "%i" QuickLook/Thumbnail.jpg; mv QuickLook/Thumbnail.jpg "%o"; rmdir QuickLook'/>

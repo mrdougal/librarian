@@ -1,8 +1,0 @@
-#!/bin/sh
-echo $1 $2
-pwd=`pwd`
-cp $1 /tmp
-cd /tmp
-unzip $1 QuickLook/Thumbnail.jpg
-mv /tmp/QuickLook/Thumbnail.jpg $2
-rmdir /tmp/QuickLook
