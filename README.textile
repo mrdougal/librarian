@@ -8,3 +8,4 @@ Assets can be a variety of formats
 * "Documents" eg: pdf, word, excel
 * _Possible support for iWork docs_
 * Other formats such as InDesign, which we don't expect to create thumbnails
+
