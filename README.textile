@@ -1,0 +1,10 @@
+Document storage mechanism.
+
+To store assets via web interface.
+The librarian will store the images, extract meta data and *attempt* to create a thumbnail of the document. 
+
+Assets can be a variety of formats
+* Images eg: jpeg, png or gif
+* "Documents" eg: pdf, word, excel
+* _Possible support for iWork docs_
+* Other formats such as InDesign, which we don't expect to create thumbnails
