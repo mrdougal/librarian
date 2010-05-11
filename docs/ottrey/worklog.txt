@@ -1,0 +1,6 @@
+Mon 10/05/2010
+* 12-18:00 : refinery, radiant, example-assets, imagemagick, git repo
+
+Tue 11/05/2010
+* 12-14:00 : setting up rails app
+* 16-17:00 : paperclip, datamapper, sinatra, documenting

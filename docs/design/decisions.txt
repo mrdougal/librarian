@@ -3,7 +3,7 @@ System
 * OSX
   -> Client is a Mac outfit, so *might* "lock-in" to this.
 * Linux
-  -> less "lock-in"  :)
+  - less "lock-in"  :)
   * Ubuntu 10.04 (Long Term Service)
     -> Chris uses day-to-day
   * CentOS
@@ -20,15 +20,26 @@ Framework
 =========
 * rails
   * rails3
-    -> gotta move forward, not back
+    -> gotta move forward, not back, so go with rails 3!
 * sinatra
   -> too light for this app
+
+
+Existing CMS Solutions
+======================
+* refinery ( http://refinerycms.com/ )
+  - could rearange tabs, upload resources, upload images (this created thumbnails).
+  -> worth having a look at the code.
+* radiant ( http://radiantcms.org/ )
+  - looks like a simple wiki
+  - can edit style sheets through admin web interface
+  -> don't think so
 
 
 Datastore
 =========
 * Mongo/Couch
-  -> no replication needed so don't see the point of using them.
+  - no replication needed so don't see the point of using them.
     (plan to run on a single server in the Melbourne office)
 * RDBMS
   * mysql
@@ -46,16 +57,16 @@ ORM
 Template Engine
 ===============
 * haml
-  -> developer friendly
+  - developer friendly
 * erb
-  -> designer friendly;
-     so probably use haml, just in case a designer has to look at it.
+  - designer friendly;
+  -> so probably use haml, just in case a designer has to look at it.
 
 
 Thumbnail Creation
 ==================
 * ImageScience ( http://seattlerb.rubyforge.org/ImageScience.html )
-  -> only seems to work for images (ie. not documents, spreadsheets etc) 
+  - only seems to work for images (ie. not documents, spreadsheets etc) 
 * ImageMagick/RMagick
   -> stick with the magick
 

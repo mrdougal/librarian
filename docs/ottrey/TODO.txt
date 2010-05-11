@@ -1,0 +1,5 @@
+- Paperclip
+ - RMagick
+   - ImageMagick (get delegates working for iWork files)
+- Ldap
+ - ?Setup a test server?
