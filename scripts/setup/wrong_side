@@ -1,0 +1,120 @@
+#!/usr/bin/env bash
+
+##
+## Wrong side of the tracks: Rails on Ubuntu
+## Author: Mike Williamson
+## Website: www.dexterchief.com
+## This is intended to do the heavy lifting to get a working Rails environment from a default Ubuntu install. 
+##
+# ottrey - Tue May 11 12:38:06 EST 2010
+#aptitude update || { echo "Updating failed! Exiting!"; exit 1; } ;
+#
+#aptitude install libnotify-bin;
+# ottrey - Tue May 11 12:38:06 EST 2010
+
+
+#Get the Ubuntu version that we are running on.
+distro=`cat /etc/issue | awk '{print $1}'`; #returns 'Ubuntu'... or should.
+version=`cat /etc/issue | awk '{print $2}'`; #returns something like '9.10'
+if [ $distro !=  'Ubuntu' ]; then
+  echo 'This script is expecting Ubuntu'; exit 1;
+fi
+echo "You are running $distro $version" "Downloading and installing now. Sit tight there is a lot to install. MySQL will ask for a password partway through the install.";
+
+#
+#Handle the different versions with a case statment so we can deal with different packages if needed. 
+#There seems to be a big difference between versions in Alpha and the difference becomes smaller as it gets closer to a final release.
+#This really only here for testing upcoming versions.
+#
+case $version in
+'9.10') #Karmic Koala
+
+  aptitude install --assume-yes build-essential netbeans gedit-plugins vim git-core ruby-full libopenssl-ruby1.8 mysql-server-5.0 mysql-client-5.0 libmysqlclient-dev libsqlite3-dev sqlite3-doc ssl-cert meld python-gtksourceview gitk libxml2-dev libxslt1-dev libnotify1 libgtk2-ruby || { echo "problem downloading one of the packages"; exit 1; } 
+
+;;
+'10.04')  ## '10.04') the development version seems not to have a version number.
+
+  aptitude install --assume-yes build-essential gedit-plugins git-core ruby-full openjdk-6-jre libopenssl-ruby1.8 mysql-server-5.1 mysql-client-5.1 libmysqlclient-dev libsqlite3-dev sqlite3-doc ssl-cert meld gitk libxml-ruby1.8 libxslt1-dev libxml2-dev libnotify1 || { echo "problem downloading one of the packages"; exit 1; } 
+
+;;
+*)
+   echo "Are you even running Ubuntu?"
+;;
+esac
+
+#
+#The rest if the install is the same for both versions...
+#
+
+#cd somewhere reasonable
+cd $HOME
+echo "Downloading Netbeans 6.9 Beta." "6.8 Dosen't support Rails 3 so we are grabbing 6.9 from the netbeans site.";
+
+wget http://download.netbeans.org/netbeans/6.9/beta/bundles/netbeans-6.9beta-ml-ruby-linux.sh
+chown -R $SUDO_USER ~/netbeans-6.9beta-ml-ruby-linux.sh
+chgrp -R $SUDO_USER ~/netbeans-6.9beta-ml-ruby-linux.sh
+chmod +x netbeans-6.9beta-ml-ruby-linux.sh
+echo "Installing Netbeans 6.9 Beta." "It can take a while to install and it dosen't look like its doing anything. Sit tight. You will find an icon on your desktop afterwards.";
+su $SUDO_USER -c './netbeans-6.9beta-ml-ruby-linux.sh --silent'
+
+
+
+echo "Going to get a fresh ruby-gems." "Downloading the latest version from rubyforge."
+echo -e "\r\n\r\nGoing to get a fresh ruby-gems...\r\n\r\n"
+cd $HOME
+wget http://rubyforge.org/frs/download.php/69365/rubygems-1.3.6.tgz || { echo "Couldn't download ruby-gems!"; exit 1; } 
+
+tar -xvf rubygems-1.3.6.tgz || { echo "tar problems"; exit 1; }
+chmod +x rubygems-1.3.6/setup.rb
+
+ruby rubygems-1.3.6/setup.rb
+
+echo -e "\r\n\r\nCleaning up a little...\r\n\r\n"
+rm $HOME/rubygems-1.3.6.tgz
+rm -Rf $HOME/rubygems-1.3.6
+
+##Create some symlinks so we can use the gem command without whining...
+
+ln -s /usr/bin/gem1.8 /usr/local/bin/gem
+ln -s /usr/bin/ruby1.8 /usr/local/bin/ruby
+ln -s /usr/bin/rdoc1.8 /usr/local/bin/rdoc
+ln -s /usr/bin/ri1.8 /usr/local/bin/ri
+ln -s /usr/bin/irb1.8 /usr/local/bin/irb
+
+gem update --system
+#Rubygems.org/Gemcutter is the place to get all gems now.
+gem install gemcutter
+
+echo "Installing gems." "You may want to go have a nap. You may see some errors, but those are just for the rdocs an won't effect the gems themselves."
+
+#Feel free to add any gems you want here:
+#Will need to think about adding some versions here as well when working on older projects.
+gem install mysql taps heroku haml ruby-debug-ide ruby-debug clickatell mongrel mocha authlogic libnotify activemerchant haml_scaffold jrails nokogiri sanitize mechanize will_paginate nokogiri 
+
+
+echo "Installing Ruby on Rails." "Rails 3 Beta is the version that is being installed."
+#
+#Uncomment the Rails versions you want installed or add others. 
+#They will install side by side and you projects will use the one the need (whatever is specified in the environment.rb).
+#if you need to create a new project using an old version of rails you need to specify the rails version like this: rails _2.1.0_ projectname
+
+#gem install rails -v 1.2.3 --include-dependencies
+#gem install rails -v 2.1 --include-dependencies
+#gem install rails -v 2.3.5 --include-dependencies
+
+#Rails 3 beta.
+#Rubygems 1.3.6 now handles dependencies in prerelease software so this is all that is needed to install Rails 3 beta now:
+gem install rails --pre
+
+echo -e "\r\n\r\nHere are the gems installed:\r\n\r\n"
+
+gem list
+
+echo "Welcome to the wrong side of the tracks." "Everything is setup and ready to go. Enjoy."
+
+
+
+
+
+
+

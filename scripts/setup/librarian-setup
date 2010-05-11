@@ -1,0 +1,7 @@
+#!/bin/sh
+rails librarian -m http://github.com/snusnu/rails-templates/raw/master/dm_rails_master.rb
+cd librarian
+rails generate scaffold Asset name:string
+
+rake db:create
+rake db:autoupgrade
