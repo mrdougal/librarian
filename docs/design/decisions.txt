@@ -1,0 +1,74 @@
+System
+======
+* OSX
+  -> Client is a Mac outfit, so *might* "lock-in" to this.
+* Linux
+  -> less "lock-in"  :)
+  * Ubuntu 10.04 (Long Term Service)
+    -> Chris uses day-to-day
+  * CentOS
+    -> Dougal uses this on some production server?
+  
+
+Language
+========
+* ruby
+  -> of course!  :)
+
+
+Framework
+=========
+* rails
+  * rails3
+    -> gotta move forward, not back
+* sinatra
+  -> too light for this app
+
+
+Datastore
+=========
+* Mongo/Couch
+  -> no replication needed so don't see the point of using them.
+    (plan to run on a single server in the Melbourne office)
+* RDBMS
+  * mysql
+    -> probably use this
+ 
+
+ORM
+===
+* ActiveRecord
+  -> if we run into problems using DataMapper
+* Datamapper
+  -> because its ready
+
+
+Template Engine
+===============
+* haml
+  -> developer friendly
+* erb
+  -> designer friendly;
+     so probably use haml, just in case a designer has to look at it.
+
+
+Thumbnail Creation
+==================
+* ImageScience ( http://seattlerb.rubyforge.org/ImageScience.html )
+  -> only seems to work for images (ie. not documents, spreadsheets etc) 
+* ImageMagick/RMagick
+  -> stick with the magick
+
+
+Search Platform
+===============
+* Solr ( http://lucene.apache.org/solr/ )
+  -> looks good
+
+
+Misc
+====
+* LDAP
+* Paperclip
+* Formtastic
+* ...
