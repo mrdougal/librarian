@@ -2,7 +2,7 @@ defaults: &defaults
   adapter: sqlite3
 
 development:
-  database: dm_rails3_app_development.db
+  database: librarian_development.db
   <<: *defaults
 
   # Add more repositories
@@ -17,8 +17,8 @@ development:
   #     ...
 
 test:
-  database: dm_rails3_app_test.db
+  database: librarian_test.db
   <<: *defaults
 production:
-  database: dm_rails3_app_production.db
+  database: librarian_production.db
   <<: *defaults
