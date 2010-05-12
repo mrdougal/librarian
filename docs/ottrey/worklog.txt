@@ -4,3 +4,7 @@ Mon 10/05/2010
 Tue 11/05/2010
 * 12-14:00 : setting up rails app
 * 16-17:00 : paperclip, datamapper, sinatra, documenting
+
+Wed 12/05/2010
+* took the day off.  spent most of it reading up on cloud computing, amazon, ubuntu,
+  eucalyptus etc - very interesting, and possibly very useful, but a little off topic. :)
