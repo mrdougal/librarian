@@ -105,3 +105,34 @@ Wed May 12 10:34:40 EST 2010
    - http://blog.prashanthellina.com/2008/02/03/create-pdf-thumbnails-using-imagemagick-on-linux/
    - http://www.imagemagick.org/script/formats.php
    - http://www.imagemagick.org/Usage/files/#delegates
+
+
+Wed May 12 12:23:37 EST 2010
+- xml schema for iWorks docs
+  - http://developer.apple.com/mac/library/documentation/AppleApplications/Conceptual/iWork2-0_XML/Chapter01/Introduction.html
+  -> so might we be writing these docs?  (i thought we just needed to create a thumbnail.)
+
+
+Wed May 12 13:01:41 EST 2010
+- AWS
+  - EC2
+    - Instance hours is the time the instance is running, not the actual CPU time usage.
+    - data persistence ?
+    - installing additional software?
+- slicehost
+  - http://www.slicehost.com/questions/
+    - US only
+- Ubuntu Enterprise Cloud ( http://www.ubuntu.com/cloud/private )
+- GoGrid
+  - http://www.gogrid.com/cloud-hosting/custom-cloud-server-images.php
+    - can create your own image in a sandbox then save it, to deploy later
+      - but what if i want to use the image locally (ie. on *my* hardware, runing Xen?)
+- easily setup a server
+  - http://github.com/opscode/chef
+  - http://github.com/benhoskings/babushka
+  - http://rknowsys-ror.blogspot.com/2008/11/tutorial-on-hosting-ror-ruby-on-rails.html
+  - http://ec2onrails.rubyforge.org/
+  - http://www.capify.org/index.php/Capistrano
+  - http://www.philchen.com/2009/02/14/how-to-create-an-amazon-elastic-compute-cloud-ec2-machine-image-ami
+  - https://wiki.ubuntu.com/EC2Vmbuilder
+
