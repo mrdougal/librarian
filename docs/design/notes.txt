@@ -72,20 +72,36 @@ Mon May 10 14:22:28 EST 2010
 
 - RMagick
   - http://rmagick.rubyforge.org/
-  - RMagick is an interface between the Ruby programming language and the ImageMagick® and GraphicsMagick image processing libraries.
+  - RMagick is an interface between the Ruby programming language and the
+    ImageMagick and GraphicsMagick image processing libraries.
 
 
 - gems ready for rails 3
   - http://www.railsplugins.org/plugins
     - Paperclip
-    - 
+    - ??? 
 
 
 Mon May 10 15:32:24 EST 2010
  - breakdown of file formats ???
   
 
-
 Tue May 11 15:38:14 EST 2010
  - Solr ( http://lucene.apache.org/solr/ )
  - LDAP
+   - http://ruby-ldap.sourceforge.net/
+   - http://www.tutorialspoint.com/ruby/ruby_ldap.htm
+   - http://www.openldap.org/
+
+
+Wed May 12 10:34:40 EST 2010
+ - dm-paperclip
+   - http://github.com/krobertson/dm-paperclip
+   - http://merbunity.com/news/6
+   - http://gist.github.com/291877
+   - http://blog.wyeworks.com/2010/2/10/making-paperclip-work-with-sinatra-datamapper
+
+- ImageMagick
+   - http://blog.prashanthellina.com/2008/02/03/create-pdf-thumbnails-using-imagemagick-on-linux/
+   - http://www.imagemagick.org/script/formats.php
+   - http://www.imagemagick.org/Usage/files/#delegates
