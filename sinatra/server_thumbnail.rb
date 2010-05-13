@@ -4,18 +4,29 @@ require 'pathname'
 require 'zipruby'
 require 'helpers'
 
+require 'RMagick'
+
+IWORK_EXTENSIONS = %w(pages numbers key)
+EXTENSIONS = IWORK_EXTENSIONS + %w(pdf png jpg)
 ASSETS_DIR = '../docs/example-assets'
-ASSETS = "#{ASSETS_DIR}/*.{pages,numbers,key}"
+#ASSETS = "#{ASSETS_DIR}/*.{#{EXTENSIONS.join(',')}}"
+ASSETS = "#{ASSETS_DIR}/*"
+
 
 get '/:asset.png' do
   asset = params[:asset]
   content_type 'image/png'
   path = Pathname.new(ASSETS_DIR).join asset
-  path.directory? ?
-    path.join('QuickLook/Thumbnail.jpg').open.read :
-    Zip::Archive.open(path.realpath.to_s) { |z|
-      z.fopen('QuickLook/Thumbnail.jpg').read
-    }
+#  if IWORK_EXTENSIONS.include? path.extname[1..-1]
+#    path.directory? ? path.join('QuickLook/Thumbnail.jpg').open.read :
+#      Zip::Archive.open(path.realpath.to_s) { |z|
+#        z.fopen('QuickLook/Thumbnail.jpg').read
+#      }
+#  else
+    img = Magick::Image.read(path)[0]
+    img.format = 'png'
+    img.to_blob
+#  end
 end
 
 get '/favicon.ico' do
@@ -41,6 +52,9 @@ __END__
 @@ _asset
 %div.thumbnail(style="background-image: url(/#{asset.basename}.png);")
 = asset.basename
+(
+%b.extname= asset.extname[1..-1]
+)
 
 
 @@ layout

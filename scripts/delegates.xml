@@ -1,2 +1,3 @@
 <delegate decode="pages" command='unzip "%i" QuickLook/Thumbnail.jpg; mv QuickLook/Thumbnail.jpg "%o"; rmdir QuickLook'/>
+<delegate decode="key" command='unzip "%i" QuickLook/Thumbnail.jpg; mv QuickLook/Thumbnail.jpg "%o"; rmdir QuickLook'/>
 <delegate decode="numbers" command='unzip "%i" QuickLook/Thumbnail.jpg; mv QuickLook/Thumbnail.jpg "%o"; rmdir QuickLook'/>
