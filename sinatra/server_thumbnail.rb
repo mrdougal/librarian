@@ -4,17 +4,18 @@ require 'pathname'
 require 'zipruby'
 require 'helpers'
 
-ASSETS_DIR = '../../docs/example-assets'
+ASSETS_DIR = '../docs/example-assets'
 ASSETS = "#{ASSETS_DIR}/*.{pages,numbers,key}"
 
 get '/:asset.png' do
   asset = params[:asset]
   content_type 'image/png'
   path = Pathname.new(ASSETS_DIR).join asset
-  Zip::Archive.open(path.realpath.to_s) { |z|
-    f = z.fopen('QuickLook/Thumbnail.jpg')
-    data = f.read
-  }
+  path.directory? ?
+    path.join('QuickLook/Thumbnail.jpg').open.read :
+    Zip::Archive.open(path.realpath.to_s) { |z|
+      z.fopen('QuickLook/Thumbnail.jpg').read
+    }
 end
 
 get '/favicon.ico' do
