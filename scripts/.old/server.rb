@@ -4,7 +4,7 @@ require 'pathname'
 require 'zipruby'
 require 'helpers'
 
-ASSETS_DIR = '../docs/example-assets/iWork docs'
+ASSETS_DIR = '../../docs/example-assets'
 ASSETS = "#{ASSETS_DIR}/*.{pages,numbers,key}"
 
 get '/:asset.png' do
