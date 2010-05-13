@@ -2,7 +2,7 @@ defaults: &defaults
   adapter: sqlite3
 
 development:
-  database: librarian_development.db
+  database: db/librarian_development.db
   <<: *defaults
 
   # Add more repositories
@@ -17,8 +17,8 @@ development:
   #     ...
 
 test:
-  database: librarian_test.db
+  database: db/librarian_test.db
   <<: *defaults
 production:
-  database: librarian_production.db
+  database: db/librarian_production.db
   <<: *defaults
