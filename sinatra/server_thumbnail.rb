@@ -4,6 +4,9 @@ require 'pathname'
 require 'zipruby'
 require 'helpers'
 
+# Ubuntu currently has conflicting versions for libimagemagick and rmagick
+# This installation of RMagick was configured with ImageMagick 6.5.7 but ImageMagick 6.5.8-3 is in use
+RMAGICK_BYPASS_VERSION_TEST = true
 require 'RMagick'
 
 IWORK_EXTENSIONS = %w(pages numbers key)
@@ -37,7 +40,7 @@ get '/:asset' do
 end
 
 get '/' do
-  haml :assets, :locals => { :assets => Dir[ASSETS].collect { |f| Pathname.new f } }
+  haml :assets, :locals => { :assets => Dir[ASSETS].collect { |f| Pathname.new f }.collect { |f| f unless f.directory? }.compact.sort }
 end
 
 __END__
