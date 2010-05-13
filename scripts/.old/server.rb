@@ -38,7 +38,7 @@ __END__
 
 
 @@ _asset
-%img.thumbnail(src="/#{asset.basename}.png" alt="#{asset.basename}")
+%div.thumbnail(style="background-image: url(/#{asset.basename}.png);")
 = asset.basename
 
 

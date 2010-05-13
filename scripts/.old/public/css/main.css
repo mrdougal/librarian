@@ -1,7 +1,27 @@
+/* @override http://0.0.0.0:4567/css/main.css */
+
 body {
-  background-color: #777777;
+  background-color: #fff;
+	padding-right: 5%;
+	padding-left: 5%;
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
 }
-img.thumbnail {
-  width: 100px;
-  height: 150px;
+
+div.asset {
+	float: left;
+	margin-right: 20px;
+	text-align: center;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	width: 140px;
+	height: 180px;
+}
+
+div.thumbnail {
+	border: 1px solid #919191;
+	margin-bottom: 10px;
+	height: 130px;
+	width: 140px;
+	background-repeat: no-repeat;
+	background-position: center center;
 }
