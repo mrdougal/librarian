@@ -20,16 +20,10 @@ get '/:asset.png' do
   asset = params[:asset]
   content_type 'image/png'
   path = Pathname.new(ASSETS_DIR).join asset
-#  if IWORK_EXTENSIONS.include? path.extname[1..-1]
-#    path.directory? ? path.join('QuickLook/Thumbnail.jpg').open.read :
-#      Zip::Archive.open(path.realpath.to_s) { |z|
-#        z.fopen('QuickLook/Thumbnail.jpg').read
-#      }
-#  else
-    img = Magick::Image.read(path)[0]
-    img.format = 'png'
-    img.to_blob
-#  end
+  img = Magick::Image.read("#{path.extname[1..-1]}:#{path}").first
+  img.format = 'png'
+  img.change_geometry!('130x140') { |cols, rows, i| i.resize!(cols, rows) }
+  img.to_blob
 end
 
 get '/favicon.ico' do

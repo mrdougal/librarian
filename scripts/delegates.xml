@@ -1,3 +1,20 @@
-<delegate decode="pages" command='unzip "%i" QuickLook/Thumbnail.jpg; mv QuickLook/Thumbnail.jpg "%o"; rmdir QuickLook'/>
-<delegate decode="key" command='unzip "%i" QuickLook/Thumbnail.jpg; mv QuickLook/Thumbnail.jpg "%o"; rmdir QuickLook'/>
-<delegate decode="numbers" command='unzip "%i" QuickLook/Thumbnail.jpg; mv QuickLook/Thumbnail.jpg "%o"; rmdir QuickLook'/>
+<delegate decode="pages"   command='unzip -qq "%i" QuickLook/Thumbnail.jpg; mv QuickLook/Thumbnail.jpg "%o"; rmdir QuickLook'/>
+<delegate decode="key"     command='unzip -qq "%i" QuickLook/Thumbnail.jpg; mv QuickLook/Thumbnail.jpg "%o"; rmdir QuickLook'/>
+<delegate decode="numbers" command='unzip -qq "%i" QuickLook/Thumbnail.jpg; mv QuickLook/Thumbnail.jpg "%o"; rmdir QuickLook'/>
+<delegate decode="__doc__" command='tmpdir=/tmp/wvPDF.$$; mkdir $tmpdir; wvPDF --targetdir=$tmpdir "%i" "%i".pdf > /dev/null; convert "%i".pdf "%o"; rm -rf $tmpdir'/>
+<delegate decode="doc" command='tmp="%i.doc"; cp "%i" $tmp; ooffice -invisible -headless -norestore "macro:///Tools.MSToPDF.ConvertMSToPDF($tmp)"; while [ ! -e "%i".pdf ]; do sleep 1; done; convert "%i".pdf "%o"; rm "%i".*'/>
+<delegate decode="ppt" command='tmp="%i.ppt"; cp "%i" $tmp; ooffice -invisible -headless -norestore "macro:///Tools.MSToPDF.ConvertMSToPDF($tmp)"; while [ ! -e "%i".pdf ]; do sleep 1; done; convert "%i".pdf "%o"; rm "%i".*'/>
+<delegate decode="xls" command='tmp="%i.xls"; cp "%i" $tmp; ooffice -invisible -headless -norestore "macro:///Tools.MSToPDF.ConvertMSToPDF($tmp)"; while [ ! -e "%i".pdf ]; do sleep 1; done; convert "%i".pdf "%o"; rm "%i".*'/>
+<delegate decode="odp" command='tmp="%i.odp"; cp "%i" $tmp; ooffice -invisible -headless -norestore "macro:///Tools.MSToPDF.ConvertMSToPDF($tmp)"; while [ ! -e "%i".pdf ]; do sleep 1; done; convert "%i".pdf "%o"; rm "%i".*'/>
+<delegate decode="ods" command='tmp="%i.ods"; cp "%i" $tmp; ooffice -invisible -headless -norestore "macro:///Tools.MSToPDF.ConvertMSToPDF($tmp)"; while [ ! -e "%i".pdf ]; do sleep 1; done; convert "%i".pdf "%o"; rm "%i".*'/>
+<delegate decode="odt" command='tmp="%i.odt"; cp "%i" $tmp; ooffice -invisible -headless -norestore "macro:///Tools.MSToPDF.ConvertMSToPDF($tmp)"; while [ ! -e "%i".pdf ]; do sleep 1; done; convert "%i".pdf "%o"; rm "%i".*'/>
+<delegate decode="rtf" command='tmp="%i.rtf"; cp "%i" $tmp; ooffice -invisible -headless -norestore "macro:///Tools.MSToPDF.ConvertMSToPDF($tmp)"; while [ ! -e "%i".pdf ]; do sleep 1; done; convert "%i".pdf "%o"; rm "%i".*'/>
+
+<delegate decode="ogv" command='totem-video-thumbnailer "%i" "%o"'/>
+
+<delegate decode="swf" command='cp /usr/share/icons/oxygen/64x64/mimetypes/application-x-shockwave-flash.png "%o"'/>
+
+<delegate decode="oga" command='cp /usr/share/mythtv/themes/metallurgy/icons/music.png "%o"'/>
+<delegate decode="spx" command='cp /usr/share/icons/oxygen/64x64/mimetypes/audio-x-speex+ogg.png "%o"'/>
+<delegate decode="zip" command='cp /usr/share/icons/oxygen/64x64/mimetypes/application-zip.png "%o"'/>
+

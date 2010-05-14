@@ -8,3 +8,11 @@ Tue 11/05/2010
 Wed 12/05/2010
 * took the day off.  spent most of it reading up on cloud computing, amazon, ubuntu,
   eucalyptus etc - very interesting, and possibly very useful, but a little off topic. :)
+
+Thu 13/05/2010
+* 11-13:00 : sinatra thumbnailer
+* 14-17:00 : use rmagick instead of my custom zip reader for iWork files, add more asset types (ai doc)
+
+Fri 14/05/2010
+* 10-11:00 : got openoffice to do some more conversions into pdf for image magick;
+             now all non audio example assets have thumbnails (except flash)
