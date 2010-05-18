@@ -139,4 +139,10 @@ Wed May 12 13:01:41 EST 2010
 
 Thu May 13 10:56:33 EST 2010
 - import html into pages
--
+
+
+Tue May 18 10:11:13 EST 2010
+- memory object caching
+  - memcached http://memcached.org/
+  - redis http://code.google.com/p/redis/
+
